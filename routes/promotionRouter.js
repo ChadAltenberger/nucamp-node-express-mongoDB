@@ -39,8 +39,9 @@ promotionRouter
     res.end('Will send all the promotions to you');
   })
   .post((req, res) => {
+    res.statusCode = 403;
     res.end(
-      `Will add the promotion: ${req.body.name} with description: ${req.body.description}`
+      `POST operation not supported on /promotions/${req.params.promotionId}`
     );
   })
   .put((req, res) => {

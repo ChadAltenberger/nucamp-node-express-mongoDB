@@ -39,8 +39,9 @@ campsiteRouter
     res.end('Will send all the campsites to you');
   })
   .post((req, res) => {
+    res.statusCode = 403;
     res.end(
-      `Will add the campsite: ${req.body.name} with description: ${req.body.description}`
+      `POST operation not supported on /campsites/${req.params.campsiteId}`
     );
   })
   .put((req, res) => {
