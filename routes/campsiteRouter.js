@@ -36,7 +36,7 @@ campsiteRouter
     next();
   })
   .get((req, res) => {
-    res.end('Will send all the campsites to you');
+    res.end(`Will send ${req.params.campsiteId} to you`);
   })
   .post((req, res) => {
     res.statusCode = 403;
@@ -50,7 +50,7 @@ campsiteRouter
         with description: ${req.body.description}`);
   })
   .delete((req, res) => {
-    res.end('Deleting all campsites');
+    res.end(`Deleting ${req.params.campsiteId}`);
   });
 
 module.exports = campsiteRouter;

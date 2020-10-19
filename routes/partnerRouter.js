@@ -36,7 +36,7 @@ partnerRouter
     next();
   })
   .get((req, res) => {
-    res.end('Will send all the partners to you');
+    res.end(`Will send ${req.params.partnerId} to you`);
   })
   .post((req, res) => {
     res.statusCode = 403;
@@ -50,7 +50,7 @@ partnerRouter
         with description: ${req.body.description}`);
   })
   .delete((req, res) => {
-    res.end('Deleting all partners');
+    res.end(`Deleting ${req.params.partnerId}`);
   });
 
 module.exports = partnerRouter;

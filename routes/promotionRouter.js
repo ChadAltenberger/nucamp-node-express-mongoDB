@@ -36,7 +36,7 @@ promotionRouter
     next();
   })
   .get((req, res) => {
-    res.end('Will send all the promotions to you');
+    res.end(`Will send ${req.params.promotionId} to you`);
   })
   .post((req, res) => {
     res.statusCode = 403;
@@ -50,7 +50,7 @@ promotionRouter
         with description: ${req.body.description}`);
   })
   .delete((req, res) => {
-    res.end('Deleting all promotions');
+    res.end(`Deleting ${req.params.promotionId}`);
   });
 
 module.exports = promotionRouter;
